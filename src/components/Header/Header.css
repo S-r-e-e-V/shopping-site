@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+.header .logo-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.header .logo-container img {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+.header .logo-container .menu-bar {
+  cursor: pointer;
+}
+.header .header-titles {
+  display: flex;
+  flex: 5;
+}
+.header .header-titles > span {
+  cursor: pointer;
+  padding-left: 2rem;
+  transition: all 0.2s ease-in-out;
+}
+.header .header-titles .title-text:hover {
+  color: var(--mediumred);
+  transform: scale(1.1);
+}
+.header .search {
+  flex: 1;
+}
+.header .search-product {
+  display: flex;
+  position: relative;
+}
+.header input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--black);
+  padding: 0.2rem 0.2rem;
+  outline: none;
+}
+.header .search-icon {
+  position: absolute;
+  left: 8.5rem;
+}

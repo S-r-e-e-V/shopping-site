@@ -1,0 +1,38 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 16rem;
+  height: 25rem;
+  cursor: pointer;
+}
+.card:hover {
+  box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.74);
+  -webkit-box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.74);
+  -moz-box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.74);
+}
+.card img {
+  width: 16rem;
+  height: 16rem;
+}
+.card .details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+}
+.card .details > span {
+  padding: 0.2rem 0rem;
+}
+.card .details .category {
+  color: var(--mediumGray);
+}
+.card .details .item {
+  color: var(--black);
+}
+.card .details .price {
+  color: var(--mediumred);
+}
+.card .details .review {
+  display: flex;
+  align-items: center;
+}
