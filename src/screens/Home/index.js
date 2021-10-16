@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./Home.css";
 
 import Images from "../../assets";
@@ -12,6 +12,10 @@ import VideoBanner from "../../components/VideoBanner";
 import ProductCard from "../../components/ProductCard";
 
 export default function Home() {
+  const featuredProducts = useRef();
+  const topSelling = useRef();
+  const [featuredProductsScroll, setfeaturedProductsScroll] = useState(0);
+  const [topSellingScroll, settopSellingScroll] = useState(0);
   const [products, setproducts] = useState([
     {
       image: Images.sample,
@@ -69,10 +73,10 @@ export default function Home() {
         <Banner />
       </div>
       <div className="video-container">
-        <VideoBanner />
-        <VideoBanner />
-        <VideoBanner />
-        <VideoBanner />
+        <VideoBanner video={Images.video1} />
+        <VideoBanner video={Images.video2} />
+        <VideoBanner video={Images.video1} />
+        <VideoBanner video={Images.video1} />
       </div>
       <div className="services">
         <div className="delivery">
@@ -105,7 +109,7 @@ export default function Home() {
       </div>
       <div className="featured-products">
         <span className="featured-title">Featured Products</span>
-        <div className="featured-product-list">
+        <div className="featured-product-list" ref={featuredProducts}>
           {products.map((item, index) => (
             <ProductCard
               image={item.image}
@@ -117,10 +121,31 @@ export default function Home() {
             />
           ))}
         </div>
+        <div className="scroll-ctrl">
+          <span
+            className={`dot ${
+              featuredProductsScroll === 0 ? "active" : "hide"
+            }`}
+            onClick={() => {
+              featuredProducts.current.scrollLeft = 0;
+              setfeaturedProductsScroll(0);
+            }}
+          ></span>
+          <span
+            className={`dot ${
+              featuredProductsScroll !== 0 ? "active" : "hide"
+            }`}
+            onClick={() => {
+              featuredProducts.current.scrollLeft =
+                featuredProducts.current.scrollWidth;
+              setfeaturedProductsScroll(featuredProducts.current.scrollWidth);
+            }}
+          ></span>
+        </div>
       </div>
       <div className="top-selling-products">
         <span className="top-selling-title">Top Selling</span>
-        <div className="top-selling-product-list">
+        <div className="top-selling-product-list" ref={topSelling}>
           {products.map((item, index) => (
             <ProductCard
               image={item.image}
@@ -131,6 +156,22 @@ export default function Home() {
               no_of_reviews={item.no_of_reviews}
             />
           ))}
+        </div>
+        <div className="scroll-ctrl">
+          <span
+            className={`dot ${topSellingScroll === 0 ? "active" : "hide"}`}
+            onClick={() => {
+              topSelling.current.scrollLeft = 0;
+              settopSellingScroll(0);
+            }}
+          ></span>
+          <span
+            className={`dot ${topSellingScroll !== 0 ? "active" : "hide"}`}
+            onClick={() => {
+              topSelling.current.scrollLeft = topSelling.current.scrollWidth;
+              settopSellingScroll(topSelling.current.scrollWidth);
+            }}
+          ></span>
         </div>
       </div>
     </div>

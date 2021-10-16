@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./ProductCard.css";
 
+import { useHistory } from "react-router-dom";
+
 import { GoStar } from "react-icons/go";
 
 export default function ProductCard({
@@ -11,10 +13,14 @@ export default function ProductCard({
   review,
   no_of_reviews,
 }) {
+  const history = useHistory();
   const [reviewStar, setreviewStar] = useState([0, 0, 0, 0, 0]);
-  console.log(category);
+
+  const redirect = (url) => {
+    history.push(url);
+  };
   return (
-    <div className="card">
+    <div className="card" onClick={() => redirect("/product-details/1")}>
       <img src={image} />
       <div className="details">
         <span className="category">{category}</span>
@@ -24,7 +30,6 @@ export default function ProductCard({
           {reviewStar.map((item, index) => (
             <GoStar size={20} style={index < review ? { color: "red" } : {}} />
           ))}
-
           <span>{`(${no_of_reviews} reviews)`}</span>
         </div>
       </div>

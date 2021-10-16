@@ -14,7 +14,7 @@
 .home .services {
   display: flex;
   justify-content: space-around;
-  margin: 1rem 0rem;
+  margin: 2rem 0rem;
 }
 .home .services > div {
   display: flex;
@@ -50,10 +50,33 @@
 .home .featured-product-list,
 .home .top-selling-product-list {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: hidden;
   padding: 1rem 0rem;
+  scroll-behavior: smooth;
 }
+/* .home .featured-product-list::-webkit-scrollbar,
+.home .top-selling-product-list::-webkit-scrollbar {
+  display: none;
+} */
 .home .featured-product-list > div,
 .home .top-selling-product-list > div {
   margin: 0rem 1rem;
+}
+.home .featured-products .scroll-ctrl .dot,
+.home .top-selling-products .scroll-ctrl .dot {
+  cursor: pointer;
+  height: 0.5rem;
+  width: 0.5rem;
+  border: 1px solid var(--mediumGray);
+  background-color: var(--white);
+  border-radius: 50%;
+  display: inline-block;
+}
+.home .featured-products .scroll-ctrl .dot.active,
+.home .top-selling-products .scroll-ctrl .dot.active {
+  background-color: var(--mediumGray);
+}
+.home .featured-products .scroll-ctrl :nth-child(2),
+.home .top-selling-products .scroll-ctrl :nth-child(2) {
+  margin-left: 0.5rem;
 }

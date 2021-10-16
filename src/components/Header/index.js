@@ -1,12 +1,18 @@
 import React from "react";
 import "./Header.css";
 
+import { useHistory } from "react-router-dom";
+
 import { FiMenu } from "react-icons/fi";
 import { AiOutlineSearch } from "react-icons/ai";
 
 import Images from "../../assets";
 
 export default function Header() {
+  const history = useHistory();
+  const redirect = (url) => {
+    history.push(url);
+  };
   return (
     <div className="header">
       <div className="logo-container">
@@ -14,7 +20,9 @@ export default function Header() {
         <img src={Images.logo} />
       </div>
       <div className="header-titles">
-        <span className="title-text">Home</span>
+        <span className="title-text" onClick={() => redirect("/")}>
+          Home
+        </span>
         <span className="title-text">Shops</span>
         <span className="title-text">Sample</span>
       </div>
