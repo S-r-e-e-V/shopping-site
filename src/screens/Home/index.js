@@ -75,8 +75,9 @@ export default function Home() {
       <div className="video-container">
         <VideoBanner video={Images.video1} />
         <VideoBanner video={Images.video2} />
-        <VideoBanner video={Images.video1} />
-        <VideoBanner video={Images.video1} />
+        <VideoBanner video={Images.video5} />
+        <VideoBanner video={Images.video3} />
+        <VideoBanner video={Images.video4} />
       </div>
       <div className="services">
         <div className="delivery">

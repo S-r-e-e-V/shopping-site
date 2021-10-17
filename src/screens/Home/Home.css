@@ -34,6 +34,7 @@
 }
 .home .featured-products,
 .home .top-selling-products {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -43,7 +44,6 @@
 }
 .home .featured-title,
 .home .top-selling-title {
-  padding: 1rem 0rem;
   font-weight: 400;
   font-size: 2rem;
 }

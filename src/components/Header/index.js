@@ -23,7 +23,9 @@ export default function Header() {
         <span className="title-text" onClick={() => redirect("/")}>
           Home
         </span>
-        <span className="title-text">Shops</span>
+        <span className="title-text" onClick={() => redirect("/products")}>
+          Shops
+        </span>
         <span className="title-text">Sample</span>
       </div>
       <div className="search">
