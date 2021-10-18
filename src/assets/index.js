@@ -1,6 +1,6 @@
 import sample from "./sample.jpeg";
 import banner1 from "./banner1.jpg";
-import logo from "./logo.png";
+import logo from "./logo.jpeg";
 import video1 from "./videos/1.mp4";
 import video2 from "./videos/2.mp4";
 import video3 from "./videos/3.mp4";

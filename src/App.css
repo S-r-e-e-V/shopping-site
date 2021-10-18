@@ -1,8 +1,11 @@
 :root {
   --white: #ffffff;
   --black: #000000;
+  --lightBlack: #222222;
   --lightGray: #f7f7f7;
   --mediumred: rgb(211, 73, 73);
+  --blue: rgb(11, 190, 235);
+  --violet: rgb(112, 86, 226);
   --mediumGray: rgb(161, 161, 161);
   --gray: rgb(126, 126, 126);
 }
@@ -10,7 +13,6 @@
   overflow: hidden;
 }
 .route {
-  /* margin: 1rem; */
   height: 100vh;
   width: 100vw;
 }

@@ -1,0 +1,37 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--lightBlack);
+  padding: 1rem;
+  color: var(--mediumGray);
+}
+.footer .left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer .left-side :last-child {
+  padding-top: 0.5rem;
+}
+.footer .left-side .policies > span {
+  cursor: pointer;
+}
+.footer .right-side {
+  display: flex;
+  justify-content: center;
+}
+.footer .right-side .social-icons {
+  padding-left: 1rem;
+  cursor: pointer;
+}
+.footer .right-side .social-icons.fb {
+  color: var(--violet);
+}
+.footer .right-side .social-icons.insta {
+  color: var(--mediumred);
+}
+.footer .right-side .social-icons.twitter {
+  color: var(--blue);
+}

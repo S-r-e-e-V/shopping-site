@@ -10,6 +10,7 @@ import { CgHeadset } from "react-icons/cg";
 import Banner from "../../components/Banner";
 import VideoBanner from "../../components/VideoBanner";
 import ProductCard from "../../components/ProductCard";
+import Footer from "../../components/Footer";
 
 export default function Home() {
   const featuredProducts = useRef();
@@ -175,6 +176,7 @@ export default function Home() {
           ></span>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

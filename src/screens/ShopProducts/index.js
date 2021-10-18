@@ -7,6 +7,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { BsFillGrid3X2GapFill, BsFillGridFill } from "react-icons/bs";
 
 import ProductCard from "../../components/ProductCard";
+import Footer from "../../components/Footer";
 
 export default function ShopProducts() {
   const [expand, setexpand] = useState({
@@ -212,6 +213,7 @@ export default function ShopProducts() {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

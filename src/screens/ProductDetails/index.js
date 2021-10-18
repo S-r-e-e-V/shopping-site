@@ -4,6 +4,7 @@ import "./ProductDetails.css";
 import Images from "../../assets";
 
 import { GoStar } from "react-icons/go";
+import Footer from "../../components/Footer";
 
 export default function ProductDetails() {
   let review = 2;
@@ -238,6 +239,7 @@ export default function ProductDetails() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

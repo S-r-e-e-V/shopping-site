@@ -3,7 +3,7 @@
   text-align: center;
 }
 .banner img {
-  width: 95%;
+  width: 100%;
 }
 .banner img:hover {
   -webkit-filter: brightness(70%);

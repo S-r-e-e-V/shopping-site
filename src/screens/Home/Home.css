@@ -4,12 +4,16 @@
 .home .banner-container {
   display: flex;
   justify-content: space-between;
-  margin: 1rem 0rem;
+  margin: 1rem;
+}
+
+.home .banner-container > div {
+  margin: 0rem 0.4rem;
 }
 .home .video-container {
   display: flex;
-  justify-content: space-around;
-  margin: 1rem 0rem;
+  justify-content: space-between;
+  margin: 1rem;
 }
 .home .services {
   display: flex;
