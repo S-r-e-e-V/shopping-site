@@ -1,10 +1,10 @@
 .product-details {
   display: flex;
   flex-direction: column;
-  margin: 1rem 5rem;
 }
 .product-details .section1 {
   display: flex;
+  margin: 1rem 5rem;
 }
 .product-details .product-images {
   display: flex;
@@ -132,7 +132,7 @@
 .product-details .additional-info {
   display: flex;
   flex-direction: column;
-  padding-top: 2rem;
+  margin: 2rem 5rem;
 }
 .product-details .additional-info .add-info-titles {
   display: flex;
