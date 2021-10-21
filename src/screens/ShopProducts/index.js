@@ -271,7 +271,10 @@ export default function ShopProducts() {
               <div className="sort">
                 <span className="text">Sort by: </span>
                 <select>
-                  <option value="123" />
+                  <option value="default">Default</option>
+                  <option value="most-popular">Most popular</option>
+                  <option value="most-rated">Most rated</option>
+                  <option value="date">Date</option>
                 </select>
               </div>
               <BsFillGridFill

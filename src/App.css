@@ -19,7 +19,7 @@
 }
 .route .container {
   height: calc(100vh - 3rem);
-  overflow: scroll;
+  overflow-y: scroll;
 }
 /* selection */
 * {
