@@ -53,29 +53,36 @@ export default function ProductDetails() {
       backgroundSize: "800px",
     });
   };
+  const handleSideImage = (img) => {
+    setPreviewImage(img);
+    setstyle({
+      backgroundImage: `url(${img})`,
+      backgroundPosition: "0% 0%",
+    });
+  };
   console.log(style);
   return (
     <div className="product-details">
       <div className="section1">
         <div className="product-images">
           <div className="images-list">
-            <div className="side-image">
-              <img src={Images.sample} />
-            </div>
             <div
               className="side-image"
-              onClick={() => {
-                setPreviewImage(Images.banner_img);
-                setstyle({
-                  backgroundImage: `url(${Images.banner_img})`,
-                  backgroundPosition: "0% 0%",
-                });
-              }}
+              onClick={() => handleSideImage(Images.banner_img)}
             >
               <img src={Images.banner_img} />
             </div>
-            <div className="side-image">
-              <img src={Images.sample} />
+            <div
+              className="side-image"
+              onClick={() => handleSideImage(Images.hoverImg)}
+            >
+              <img src={Images.hoverImg} />
+            </div>
+            <div
+              className="side-image"
+              onClick={() => handleSideImage(Images.productImg)}
+            >
+              <img src={Images.productImg} />
             </div>
           </div>
           <figure onMouseMove={handleMouseMove} style={style}>

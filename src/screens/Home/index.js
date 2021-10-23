@@ -19,7 +19,8 @@ export default function Home() {
   const [topSellingScroll, settopSellingScroll] = useState(0);
   const [products, setproducts] = useState([
     {
-      image: Images.sample,
+      image: Images.productImg,
+      image1: Images.sample,
       category: "women,men",
       item: "Blue Jacket",
       price: "70.45",
@@ -28,6 +29,7 @@ export default function Home() {
     },
     {
       image: Images.sample,
+      image1: Images.hoverImg,
       category: "women,men",
       item: "Blue Jacket",
       price: "70.45",
@@ -36,6 +38,7 @@ export default function Home() {
     },
     {
       image: Images.sample,
+      image1: Images.hoverImg,
       category: "women,men",
       item: "Blue Jacket",
       price: "70.45",
@@ -44,6 +47,7 @@ export default function Home() {
     },
     {
       image: Images.sample,
+      image1: Images.hoverImg,
       category: "women,men",
       item: "Blue Jacket",
       price: "70.45",
@@ -52,6 +56,7 @@ export default function Home() {
     },
     {
       image: Images.sample,
+      image1: Images.hoverImg,
       category: "women,men",
       item: "Blue Jacket",
       price: "70.45",
@@ -60,6 +65,7 @@ export default function Home() {
     },
     {
       image: Images.sample,
+      image1: Images.hoverImg,
       category: "women,men",
       item: "Blue Jacket",
       price: "70.45",
