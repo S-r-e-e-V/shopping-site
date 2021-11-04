@@ -76,8 +76,19 @@ export default function Home() {
   return (
     <div className="home">
       <div className="banner-container">
-        <Banner />
-        <Banner />
+        {/* <Banner />
+        <Banner /> */}
+        <div
+          style={{
+            border: "1px solid #000",
+            height: "200px",
+            flex: 3,
+            marginRight: ".3rem",
+          }}
+        ></div>
+        <div
+          style={{ border: "1px solid #000", height: "200px", flex: 1 }}
+        ></div>
       </div>
       <div className="video-container">
         <VideoBanner video={Images.video1} />
@@ -88,7 +99,7 @@ export default function Home() {
       </div>
       <div className="services">
         <div className="delivery">
-          <FiTruck size={30} />
+          <FiTruck className="truck-svg" />
           <div className="services-text">
             <span className="services-heading">payment & delivery</span>
             <span className="services-subheading">
@@ -97,7 +108,7 @@ export default function Home() {
           </div>
         </div>
         <div className="returns">
-          <ImSpinner11 size={30} />
+          <ImSpinner11 className="spinner-svg" />
           <div className="services-text">
             <span className="services-heading">Return & Refund</span>
             <span className="services-subheading">
@@ -106,7 +117,7 @@ export default function Home() {
           </div>
         </div>
         <div className="quality">
-          <CgHeadset size={30} />
+          <CgHeadset className="headset-svg" />
           <div className="services-text">
             <span className="services-heading">Quality Support</span>
             <span className="services-subheading">
@@ -119,14 +130,7 @@ export default function Home() {
         <span className="featured-title">Featured Products</span>
         <div className="featured-product-list" ref={featuredProducts}>
           {products.map((item, index) => (
-            <ProductCard
-              image={item.image}
-              category={item.category}
-              item={item.item}
-              price={item.price}
-              review={item.review}
-              no_of_reviews={item.no_of_reviews}
-            />
+            <ProductCard productDetails={item} />
           ))}
         </div>
         <div className="scroll-ctrl">
@@ -141,7 +145,54 @@ export default function Home() {
           ></span>
           <span
             className={`dot ${
-              featuredProductsScroll !== 0 ? "active" : "hide"
+              featuredProductsScroll ===
+              featuredProducts?.current?.clientWidth / 4
+                ? "active"
+                : "hide"
+            }`}
+            onClick={() => {
+              featuredProducts.current.scrollLeft =
+                featuredProducts.current.clientWidth / 4;
+              setfeaturedProductsScroll(
+                featuredProducts.current.clientWidth / 4
+              );
+            }}
+          ></span>
+          <span
+            className={`dot ${
+              featuredProductsScroll ===
+              (featuredProducts?.current?.clientWidth * 2) / 4
+                ? "active"
+                : "hide"
+            }`}
+            onClick={() => {
+              featuredProducts.current.scrollLeft =
+                (featuredProducts.current.clientWidth * 2) / 4;
+              setfeaturedProductsScroll(
+                (featuredProducts.current.clientWidth * 2) / 4
+              );
+            }}
+          ></span>
+          <span
+            className={`dot ${
+              featuredProductsScroll ===
+              (featuredProducts?.current?.clientWidth * 3) / 4
+                ? "active"
+                : "hide"
+            }`}
+            onClick={() => {
+              featuredProducts.current.scrollLeft =
+                (featuredProducts?.current?.clientWidth * 3) / 4;
+              setfeaturedProductsScroll(
+                (featuredProducts.current.clientWidth * 3) / 4
+              );
+            }}
+          ></span>
+          <span
+            className={`dot ${
+              featuredProductsScroll === featuredProducts?.current?.scrollWidth
+                ? "active"
+                : "hide"
             }`}
             onClick={() => {
               featuredProducts.current.scrollLeft =
@@ -155,14 +206,7 @@ export default function Home() {
         <span className="top-selling-title">Top Selling</span>
         <div className="top-selling-product-list" ref={topSelling}>
           {products.map((item, index) => (
-            <ProductCard
-              image={item.image}
-              category={item.category}
-              item={item.item}
-              price={item.price}
-              review={item.review}
-              no_of_reviews={item.no_of_reviews}
-            />
+            <ProductCard productDetails={item} ishoverImage={true} />
           ))}
         </div>
         <div className="scroll-ctrl">
@@ -174,7 +218,47 @@ export default function Home() {
             }}
           ></span>
           <span
-            className={`dot ${topSellingScroll !== 0 ? "active" : "hide"}`}
+            className={`dot ${
+              topSellingScroll === topSelling?.current?.clientWidth / 4
+                ? "active"
+                : "hide"
+            }`}
+            onClick={() => {
+              topSelling.current.scrollLeft =
+                topSelling.current.clientWidth / 4;
+              settopSellingScroll(topSelling.current.clientWidth / 4);
+            }}
+          ></span>
+          <span
+            className={`dot ${
+              topSellingScroll === (topSelling?.current?.clientWidth * 2) / 4
+                ? "active"
+                : "hide"
+            }`}
+            onClick={() => {
+              topSelling.current.scrollLeft =
+                (topSelling.current.clientWidth * 2) / 4;
+              settopSellingScroll((topSelling.current.clientWidth * 2) / 4);
+            }}
+          ></span>
+          <span
+            className={`dot ${
+              topSellingScroll === (topSelling?.current?.clientWidth * 3) / 4
+                ? "active"
+                : "hide"
+            }`}
+            onClick={() => {
+              topSelling.current.scrollLeft =
+                (topSelling?.current?.clientWidth * 3) / 4;
+              settopSellingScroll((topSelling.current.clientWidth * 3) / 4);
+            }}
+          ></span>
+          <span
+            className={`dot ${
+              topSellingScroll === topSelling?.current?.scrollWidth
+                ? "active"
+                : "hide"
+            }`}
             onClick={() => {
               topSelling.current.scrollLeft = topSelling.current.scrollWidth;
               settopSellingScroll(topSelling.current.scrollWidth);

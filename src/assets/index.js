@@ -8,6 +8,7 @@ import video2 from "./videos/2.mp4";
 import video3 from "./videos/3.mp4";
 import video4 from "./videos/4.mp4";
 import video5 from "./videos/5.mp4";
+import productImg1 from "./product-img1.jpg";
 export default {
   banner_img: banner1,
   sample: sample,
@@ -19,4 +20,5 @@ export default {
   video5: video5,
   productImg: productImg,
   hoverImg: hoverImg,
+  productImg1: productImg1,
 };

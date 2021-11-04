@@ -1,0 +1,160 @@
+.billing {
+  display: flex;
+  margin: 1rem;
+}
+/* left section ← */
+.billing .left-section {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  flex: 3;
+}
+/* main heading */
+.billing .left-section .title {
+  font-size: 1.2rem;
+  color: var(--black);
+  font-weight: 600;
+}
+/* address area */
+.billing .left-section .address {
+  display: flex;
+  flex-direction: column;
+}
+/* name */
+.billing .left-section .address .name {
+  display: flex;
+}
+.billing .left-section .address .name > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.billing .left-section .address .name > div > span {
+  margin-bottom: 0.5rem;
+}
+/* street address */
+.billing .left-section .address .street-address {
+  display: flex;
+  flex-direction: column;
+}
+.billing .left-section .address .street-address > * {
+  margin-bottom: 0.5rem;
+}
+/* city country */
+.billing .left-section .address .city-country {
+  display: flex;
+}
+.billing .left-section .address .city-country > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.billing .left-section .address .city-country > div > span {
+  margin-bottom: 0.5rem;
+}
+/* zip phone */
+.billing .left-section .address .zip-phone {
+  display: flex;
+}
+.billing .left-section .address .zip-phone > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.billing .left-section .address .zip-phone > div > span {
+  margin-bottom: 0.5rem;
+}
+/* email */
+.billing .left-section .address .email {
+  display: flex;
+  flex-direction: column;
+}
+.billing .left-section .address .email > span {
+  margin-bottom: 0.5rem;
+}
+/* left-section address padding */
+.billing .left-section .address > div {
+  padding: 0.5rem 0rem;
+}
+
+/* input field  */
+.billing .left-section input {
+  background-color: var(--lightGray);
+  height: 2.5rem;
+  padding-left: 0.3rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+}
+.billing .left-section input:focus {
+  border: 1px solid var(--mediumred);
+}
+
+/* right-section ➡ */
+
+.billing .right-section {
+  display: flex;
+  flex-direction: column;
+  border: 1px dashed var(--mediumGray);
+  background-color: var(--lightGray);
+  margin: 1rem;
+  padding: 1rem;
+  width: 20rem;
+  border-radius: 6px;
+  flex: 1;
+  height: 100%;
+}
+.billing .right-section .title {
+  font-size: 1.2rem;
+  color: var(--black);
+  padding-bottom: 1rem;
+}
+/* product info */
+.billing .right-section .product-info {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--gray);
+  border-bottom: 1px solid var(--gray);
+  padding: 1rem 0rem;
+}
+.billing .right-section .product-info > div {
+  display: flex;
+  justify-content: space-between;
+}
+/* subtotal */
+.billing .right-section .subtotal {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  color: var(--black);
+  padding: 1rem 0rem;
+}
+/* shipping */
+.billing .right-section .shipping {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0rem;
+}
+/* total */
+.billing .right-section .total {
+  display: flex;
+  justify-content: space-between;
+  color: var(--mediumred);
+  font-size: 1.2rem;
+  padding: 1rem 0rem;
+}
+/* place order */
+.billing .right-section .place-order {
+  display: flex;
+  justify-content: center;
+  padding: 0.3rem;
+  border: 1px solid var(--mediumred);
+  transition: 1s all ease;
+  cursor: pointer;
+}
+
+.billing .right-section .place-order:hover {
+  background-color: var(--mediumred);
+  color: var(--white);
+}

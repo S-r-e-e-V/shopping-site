@@ -9,16 +9,19 @@
   --violet: rgb(112, 86, 226);
   --mediumGray: rgb(161, 161, 161);
   --gray: rgb(126, 126, 126);
+  --yellow: #fcb941;
 }
 .App {
   overflow: hidden;
+  font-family: poppins;
+  color: var(--gray);
 }
 .route {
   height: 100vh;
   width: 100vw;
 }
 .route .container {
-  height: calc(100vh - 3rem);
+  height: calc(100vh - 4rem);
   overflow-y: scroll;
 }
 /* selection */
@@ -26,18 +29,18 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 /* scrollbar */
-::-webkit-scrollbar {
+.route .container ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
-::-webkit-scrollbar-track {
+.route .container ::-webkit-scrollbar-track {
   border-radius: 5px;
   background: var(--lightGray);
 }
-::-webkit-scrollbar-thumb {
+.route .container ::-webkit-scrollbar-thumb {
   background: var(--mediumGray);
   border-radius: 10px;
 }
-::-webkit-scrollbar-thumb:hover {
+.route .container ::-webkit-scrollbar-thumb:hover {
   background: var(--gray);
 }

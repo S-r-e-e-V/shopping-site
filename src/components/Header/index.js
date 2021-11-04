@@ -26,11 +26,10 @@ export default function Header() {
         <span className="title-text" onClick={() => redirect("/products")}>
           Shops
         </span>
-        <span className="title-text">Sample</span>
       </div>
       <div className="search">
         <div className="search-product">
-          <input placeholder="Search Products" />
+          <input placeholder="Search products ..." />
           <AiOutlineSearch className="search-icon" />
         </div>
       </div>

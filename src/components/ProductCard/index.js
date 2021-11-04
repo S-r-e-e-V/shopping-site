@@ -7,39 +7,37 @@ import { useHistory } from "react-router-dom";
 
 import { GoStar } from "react-icons/go";
 
-export default function ProductCard({
-  image,
-  image1,
-  category,
-  item,
-  price,
-  review,
-  no_of_reviews,
-}) {
+export default function ProductCard({ productDetails, ishoverImage = true }) {
   const history = useHistory();
-  const [showImage, setshowImage] = useState(Images.productImg);
+  const [showImage, setshowImage] = useState(productDetails.image);
   const [reviewStar, setreviewStar] = useState([0, 0, 0, 0, 0]);
 
   const redirect = (url) => {
     history.push(url);
   };
+
   return (
-    <div className="card" onClick={() => redirect("/product-details/1")}>
-      <img
-        className="product-img"
-        src={showImage}
-        onMouseOver={() => setshowImage(Images.hoverImg)}
-        onMouseOut={() => setshowImage(Images.productImg)}
-      />
+    <div
+      className="card"
+      onClick={() => redirect("/product-details/1")}
+      onMouseOver={() => ishoverImage && setshowImage(Images.hoverImg)}
+      onMouseOut={() => ishoverImage && setshowImage(productDetails.image)}
+    >
+      <img className="product-img" src={showImage} />
       <div className="details">
-        <span className="category">{category}</span>
-        <span className="item">{item}</span>
-        <span className="price">${price}</span>
+        <span className="category">{productDetails.category}</span>
+        <span className="item">{productDetails.item}</span>
+        <span className="price">${productDetails.price}</span>
         <div className="review">
           {reviewStar.map((item, index) => (
-            <GoStar size={20} style={index < review ? { color: "red" } : {}} />
+            <GoStar
+              size={17}
+              className={`review-star ${
+                index < productDetails.review ? "rated" : ""
+              }`}
+            />
           ))}
-          <span>{`(${no_of_reviews} reviews)`}</span>
+          <span>{`(${productDetails.no_of_reviews} reviews)`}</span>
         </div>
       </div>
     </div>

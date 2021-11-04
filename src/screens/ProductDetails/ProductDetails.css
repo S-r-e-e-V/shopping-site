@@ -9,10 +9,17 @@
 .product-details .product-images {
   display: flex;
 }
+/* side-image */
 .product-details .product-images .images-list .side-image {
   width: 6rem;
   height: 6rem;
   cursor: pointer;
+  opacity: 50%;
+  margin: 0rem 1rem 1rem 0rem;
+}
+.product-details .product-images .images-list .side-image.selected {
+  border: 1px solid var(--mediumred);
+  opacity: 100%;
 }
 .product-details .product-images .images-list .side-image img {
   width: 100%;
@@ -20,8 +27,27 @@
   object-fit: cover;
   overflow: hidden;
 }
+/* side-video */
+.product-details .product-images .images-list .side-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+  cursor: pointer;
+  opacity: 50%;
+  margin: 0rem 1rem 1rem 0rem;
+}
+.product-details .product-images .images-list .side-video .play-icon {
+  position: absolute;
+  color: var(--lightGray);
+  height: 2rem;
+  width: 2rem;
+  opacity: 0.7;
+}
 .product-details .product-images figure {
-  margin: 0rem 0rem 0rem 1rem;
+  margin: 0rem;
   width: 25rem;
   height: 26rem;
   background-repeat: no-repeat;
@@ -57,9 +83,18 @@
 .product-details .product-info .product-title {
   font-weight: 400;
   font-size: 2rem;
+  color: var(--black);
 }
 .product-details .product-info .review {
   display: flex;
+  align-items: center;
+}
+.product-details .product-info .review .review-star.rated {
+  color: var(--yellow);
+}
+.product-details .product-info .review > div {
+  padding-left: 0.5rem;
+  font-size: 0.9rem;
 }
 .product-details .product-info .price {
   display: flex;
@@ -121,14 +156,17 @@
   align-items: center;
   transition: 1s all ease;
   margin: 1rem;
+  color: var(--mediumred);
 }
 .product-details .product-info .purchase-button:hover {
   background: var(--mediumred);
+  color: var(--white);
 }
 .product-details .product-info hr {
   width: 100%;
   border: 1px solid var(--lightGray);
 }
+/* additional info section 📄 */
 .product-details .additional-info {
   display: flex;
   flex-direction: column;
@@ -139,6 +177,7 @@
   justify-content: space-around;
   font-weight: 400;
   font-size: 1.3rem;
+  color: var(--black);
 }
 .product-details .additional-info .add-info-titles > span {
   cursor: pointer;

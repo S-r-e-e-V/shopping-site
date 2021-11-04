@@ -7,9 +7,11 @@ import Images from "../../assets";
 
 import { IoIosArrowDown } from "react-icons/io";
 import { BsFillGrid3X2GapFill, BsFillGridFill } from "react-icons/bs";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 import ProductCard from "../../components/ProductCard";
 import Footer from "../../components/Footer";
+import ProductDetailsCard from "../../components/ProductDetailsCard";
 
 export default function ShopProducts() {
   const [expand, setexpand] = useState({
@@ -27,7 +29,7 @@ export default function ShopProducts() {
   const [gridColumns, setgridColumns] = useState("three");
   const [products, setproducts] = useState([
     {
-      image: Images.sample,
+      image: Images.productImg1,
       category: "women,men",
       item: "Blue Jacket",
       price: "70.45",
@@ -35,7 +37,7 @@ export default function ShopProducts() {
       no_of_reviews: 2,
     },
     {
-      image: Images.sample,
+      image: Images.productImg1,
       category: "women,men",
       item: "Blue Jacket",
       price: "70.45",
@@ -43,7 +45,7 @@ export default function ShopProducts() {
       no_of_reviews: 2,
     },
     {
-      image: Images.sample,
+      image: Images.productImg1,
       category: "women,men",
       item: "Blue Jacket",
       price: "70.45",
@@ -51,7 +53,7 @@ export default function ShopProducts() {
       no_of_reviews: 2,
     },
     {
-      image: Images.sample,
+      image: Images.productImg1,
       category: "women,men",
       item: "Blue Jacket",
       price: "70.45",
@@ -59,7 +61,7 @@ export default function ShopProducts() {
       no_of_reviews: 2,
     },
     {
-      image: Images.sample,
+      image: Images.productImg1,
       category: "women,men",
       item: "Blue Jacket",
       price: "70.45",
@@ -67,7 +69,23 @@ export default function ShopProducts() {
       no_of_reviews: 2,
     },
     {
-      image: Images.sample,
+      image: Images.productImg1,
+      category: "women,men",
+      item: "Blue Jacket",
+      price: "70.45",
+      review: 2,
+      no_of_reviews: 2,
+    },
+    {
+      image: Images.productImg1,
+      category: "women,men",
+      item: "Blue Jacket",
+      price: "70.45",
+      review: 2,
+      no_of_reviews: 2,
+    },
+    {
+      image: Images.productImg1,
       category: "women,men",
       item: "Blue Jacket",
       price: "70.45",
@@ -277,29 +295,31 @@ export default function ShopProducts() {
                   <option value="date">Date</option>
                 </select>
               </div>
+              <GiHamburgerMenu
+                size={15}
+                style={{ cursor: "pointer" }}
+                onClick={() => setgridColumns("list")}
+              />
               <BsFillGridFill
                 size={10}
                 style={{ cursor: "pointer" }}
-                onClick={() => setgridColumns("two")}
+                onClick={() => setgridColumns("grid")}
               />
-              <BsFillGrid3X2GapFill
+              {/* <BsFillGrid3X2GapFill
                 style={{ cursor: "pointer" }}
                 onClick={() => setgridColumns("three")}
-              />
+              /> */}
             </div>
           </div>
           <hr />
           <div className={`products-list ${gridColumns}`}>
-            {products.map((item, index) => (
-              <ProductCard
-                image={item.image}
-                category={item.category}
-                item={item.item}
-                price={item.price}
-                review={item.review}
-                no_of_reviews={item.no_of_reviews}
-              />
-            ))}
+            {gridColumns === "list"
+              ? products.map((item, index) => (
+                  <ProductDetailsCard productDetails={item} />
+                ))
+              : products.map((item, index) => (
+                  <ProductCard productDetails={item} ishoverImage={false} />
+                ))}
           </div>
         </div>
       </div>

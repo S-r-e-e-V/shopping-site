@@ -3,16 +3,29 @@ import "./ProductDetails.css";
 
 import Images from "../../assets";
 
+import { useHistory } from "react-router";
+
 import { GoStar } from "react-icons/go";
+import { FaPlay } from "react-icons/fa";
+
+import Modal from "react-modal";
+
 import Footer from "../../components/Footer";
 
 export default function ProductDetails() {
-  let review = 2;
+  let review = 2,
+    sideimages = [0, 0, 0, 0];
+
+  const history = useHistory();
+
+  let subtitle;
   const [reviewStar, setreviewStar] = useState([0, 0, 0, 0, 0]);
   const [quantity, setquantity] = useState(1);
   const [qtyError, setqtyError] = useState("");
-  const [previewImage, setPreviewImage] = useState(Images.sample);
+  const [previewImage, setPreviewImage] = useState(Images.productImg1);
+  const [selectedImageId, setselectedImageId] = useState(0);
   const [boxDisplayContent, setboxDisplayContent] = useState("d");
+  const [isOpenModal, setisOpenModal] = useState(false);
   const [style, setstyle] = useState({
     backgroundImage: `url(${previewImage})`,
     backgroundPosition: "0% 0%",
@@ -27,10 +40,12 @@ export default function ProductDetails() {
       setquantity(quantity + 1);
     }
   };
+  // purchase
+  const purchase = () => {
+    history.push("/billing");
+  };
+  // quantity validation
   const Validate = (value) => {
-    if (value.match("/^[1-9]d*$/s")) {
-      console.log("fsf");
-    }
     if (!value) {
       setqtyError("Please specify the quantity");
       setquantity(value);
@@ -42,7 +57,7 @@ export default function ProductDetails() {
       setqtyError("");
     }
   };
-
+  // image preview functions 🌉
   const handleMouseMove = (e) => {
     const { left, top, width, height } = e.target.getBoundingClientRect();
     const x = ((e.pageX - left) / width) * 100;
@@ -53,37 +68,57 @@ export default function ProductDetails() {
       backgroundSize: "800px",
     });
   };
-  const handleSideImage = (img) => {
+  const handleSideImage = (img, index) => {
     setPreviewImage(img);
+    setselectedImageId(index);
     setstyle({
       backgroundImage: `url(${img})`,
       backgroundPosition: "0% 0%",
     });
   };
-  console.log(style);
+
+  // custom modal styles
+  const customStyles = {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+    },
+  };
+
+  const closeModal = () => {
+    setisOpenModal(false);
+  };
   return (
     <div className="product-details">
       <div className="section1">
         <div className="product-images">
           <div className="images-list">
-            <div
-              className="side-image"
-              onClick={() => handleSideImage(Images.banner_img)}
-            >
-              <img src={Images.banner_img} />
-            </div>
-            <div
-              className="side-image"
-              onClick={() => handleSideImage(Images.hoverImg)}
-            >
-              <img src={Images.hoverImg} />
-            </div>
-            <div
-              className="side-image"
-              onClick={() => handleSideImage(Images.productImg)}
-            >
-              <img src={Images.productImg} />
-            </div>
+            {sideimages.map((item, index) => (
+              <>
+                {index !== 2 ? (
+                  <div
+                    className={`side-image ${
+                      selectedImageId === index ? "selected" : ""
+                    }`}
+                    onClick={() => handleSideImage(Images.productImg1, index)}
+                  >
+                    <img src={Images.productImg1} />
+                  </div>
+                ) : (
+                  <div
+                    className="side-video"
+                    onClick={() => setisOpenModal(true)}
+                  >
+                    <img src={Images.productImg1} />
+                    <FaPlay className="play-icon" />
+                  </div>
+                )}
+              </>
+            ))}
           </div>
           <figure onMouseMove={handleMouseMove} style={style}>
             <img src={previewImage} />
@@ -94,8 +129,8 @@ export default function ProductDetails() {
           <div className="review">
             {reviewStar.map((item, index) => (
               <GoStar
-                size={20}
-                style={index < review ? { color: "red" } : {}}
+                size={17}
+                className={`review-star ${index < review ? "rated" : ""}`}
               />
             ))}
             <div>{`(${"2"} reviews)`}</div>
@@ -129,7 +164,9 @@ export default function ProductDetails() {
             </div>
             <div className="error">{qtyError}</div>
           </div>
-          <div className="purchase-button">Purchase</div>
+          <div className="purchase-button" onClick={() => purchase()}>
+            Purchase
+          </div>
           <hr />
           <div className="category">
             Category:Men,Clothing,Fashion & clothing,Women
@@ -247,6 +284,16 @@ export default function ProductDetails() {
         </div>
       </div>
       <Footer />
+      {/* modal */}
+      <Modal
+        isOpen={isOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+      >
+        <video width="240" height="240" autoPlay={true} loop muted={true}>
+          <source src={Images.video1} type="video/mp4" />
+        </video>
+      </Modal>
     </div>
   );
 }

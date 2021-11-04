@@ -7,21 +7,30 @@
   margin: 1rem;
 }
 
-.home .banner-container > div {
-  margin: 0rem 0.4rem;
+.home .banner-container :first-child {
+  padding-right: 0.3rem;
+  flex: 3;
 }
+.home .banner-container > :nth-child(2) {
+  flex: 1;
+}
+/* video container */
 .home .video-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin: 1rem;
 }
+/* services */
 .home .services {
   display: flex;
   justify-content: space-around;
   margin: 2rem 0rem;
+  color: var(--black);
 }
 .home .services > div {
   display: flex;
+  align-items: center;
 }
 .home .services .services-text {
   display: flex;
@@ -36,6 +45,13 @@
 .home .services .services-text .services-subheading {
   color: var(--mediumGray);
 }
+.home .services .truck-svg,
+.home .services .spinner-svg,
+.home .services .headset-svg {
+  height: 35px;
+  width: 35px;
+}
+/* featured and top selling products */
 .home .featured-products,
 .home .top-selling-products {
   padding: 1rem;
@@ -50,6 +66,7 @@
 .home .top-selling-title {
   font-weight: 400;
   font-size: 2rem;
+  color: var(--black);
 }
 .home .featured-product-list,
 .home .top-selling-product-list {
@@ -66,21 +83,28 @@
 .home .top-selling-product-list > div {
   margin: 0rem 1rem;
 }
+.home .featured-products .scroll-ctrl,
+.home .top-selling-products .scroll-ctrl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .home .featured-products .scroll-ctrl .dot,
 .home .top-selling-products .scroll-ctrl .dot {
   cursor: pointer;
   height: 0.5rem;
   width: 0.5rem;
+  margin: 0rem 0.5rem;
   border: 1px solid var(--mediumGray);
   background-color: var(--white);
   border-radius: 50%;
   display: inline-block;
+  transition-duration: 0.2s;
 }
 .home .featured-products .scroll-ctrl .dot.active,
 .home .top-selling-products .scroll-ctrl .dot.active {
   background-color: var(--mediumGray);
-}
-.home .featured-products .scroll-ctrl :nth-child(2),
-.home .top-selling-products .scroll-ctrl :nth-child(2) {
-  margin-left: 0.5rem;
+  width: 1.5rem;
+  height: 0.3rem;
+  border-radius: 6px;
 }
