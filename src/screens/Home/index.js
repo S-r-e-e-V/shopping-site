@@ -21,6 +21,51 @@ export default function Home() {
     {
       image: Images.productImg,
       image1: Images.sample,
+      category: "women",
+      item: "Blue Jacket",
+      price: "70.45",
+      review: 2,
+      no_of_reviews: 2,
+    },
+    {
+      image: Images.sample,
+      image1: Images.hoverImg,
+      category: "women,men",
+      item: "Blue Jacket",
+      price: "70.45",
+      review: 2,
+      no_of_reviews: 2,
+    },
+    {
+      image: Images.sample,
+      image1: Images.hoverImg,
+      category: "women,men",
+      item: "Blue Jacket",
+      price: "70.45",
+      review: 2,
+      no_of_reviews: 2,
+    },
+    {
+      image: Images.sample,
+      image1: Images.hoverImg,
+      category: "women,men",
+      item: "Blue Jacket",
+      price: "70.45",
+      review: 2,
+      no_of_reviews: 2,
+    },
+    {
+      image: Images.sample,
+      image1: Images.hoverImg,
+      category: "women,men",
+      item: "Blue Jacket",
+      price: "70.45",
+      review: 2,
+      no_of_reviews: 2,
+    },
+    {
+      image: Images.sample,
+      image1: Images.hoverImg,
       category: "women,men",
       item: "Blue Jacket",
       price: "70.45",
@@ -67,12 +112,132 @@ export default function Home() {
       image: Images.sample,
       image1: Images.hoverImg,
       category: "women,men",
+      item: "Blue Jacket",
+      price: "70.45",
+      review: 2,
+      no_of_reviews: 2,
+    },
+    {
+      image: Images.sample,
+      image1: Images.hoverImg,
+      category: "women,men",
+      item: "Blue Jacket",
+      price: "70.45",
+      review: 2,
+      no_of_reviews: 2,
+    },
+    {
+      image: Images.sample,
+      image1: Images.hoverImg,
+      category: "women,men",
+      item: "Blue Jacket",
+      price: "70.45",
+      review: 2,
+      no_of_reviews: 2,
+    },
+    {
+      image: Images.sample,
+      image1: Images.hoverImg,
+      category: "women,men",
+      item: "Blue Jacket",
+      price: "70.45",
+      review: 2,
+      no_of_reviews: 2,
+    },
+    {
+      image: Images.sample,
+      image1: Images.hoverImg,
+      category: "women,men",
+      item: "Blue Jacket",
+      price: "70.45",
+      review: 2,
+      no_of_reviews: 2,
+    },
+    {
+      image: Images.sample,
+      image1: Images.hoverImg,
+      category: "women,men",
+      item: "Blue Jacket",
+      price: "70.45",
+      review: 2,
+      no_of_reviews: 2,
+    },
+    {
+      image: Images.sample,
+      image1: Images.hoverImg,
+      category: "women,men",
+      item: "Blue Jacket",
+      price: "70.45",
+      review: 2,
+      no_of_reviews: 2,
+    },
+    {
+      image: Images.sample,
+      image1: Images.hoverImg,
+      category: "women,men",
+      item: "Blue Jacket",
+      price: "70.45",
+      review: 2,
+      no_of_reviews: 2,
+    },
+    {
+      image: Images.sample,
+      image1: Images.hoverImg,
+      category: "women,men",
+      item: "Blue Jacket",
+      price: "70.45",
+      review: 2,
+      no_of_reviews: 2,
+    },
+    {
+      image: Images.sample,
+      image1: Images.hoverImg,
+      category: "women,men",
+      item: "Blue Jacket",
+      price: "70.45",
+      review: 2,
+      no_of_reviews: 2,
+    },
+    {
+      image: Images.sample,
+      image1: Images.hoverImg,
+      category: "women,men",
+      item: "Blue Jacket",
+      price: "70.45",
+      review: 2,
+      no_of_reviews: 2,
+    },
+    {
+      image: Images.sample,
+      image1: Images.hoverImg,
+      category: "women,men",
+      item: "Blue Jacket",
+      price: "70.45",
+      review: 2,
+      no_of_reviews: 2,
+    },
+    {
+      image: Images.sample,
+      image1: Images.hoverImg,
+      category: "men",
       item: "Blue Jacket",
       price: "70.45",
       review: 2,
       no_of_reviews: 2,
     },
   ]);
+  console.log(
+    topSellingScroll,
+    topSelling?.current?.scrollWidth,
+    topSelling?.current?.clientWidth
+  );
+
+  console.log(
+    "featured",
+    featuredProductsScroll,
+    featuredProducts?.current?.scrollWidth,
+    featuredProducts?.current?.clientWidth
+  );
   return (
     <div className="home">
       <div className="banner-container">
@@ -81,13 +246,13 @@ export default function Home() {
         <div
           style={{
             border: "1px solid #000",
-            height: "200px",
+            height: "300px",
             flex: 3,
             marginRight: ".3rem",
           }}
         ></div>
         <div
-          style={{ border: "1px solid #000", height: "200px", flex: 1 }}
+          style={{ border: "1px solid #000", height: "300px", flex: 1 }}
         ></div>
       </div>
       <div className="video-container">
@@ -146,45 +311,45 @@ export default function Home() {
           <span
             className={`dot ${
               featuredProductsScroll ===
-              featuredProducts?.current?.clientWidth / 4
+              featuredProducts?.current?.scrollWidth / 4
                 ? "active"
                 : "hide"
             }`}
             onClick={() => {
               featuredProducts.current.scrollLeft =
-                featuredProducts.current.clientWidth / 4;
+                featuredProducts.current.scrollWidth / 4;
               setfeaturedProductsScroll(
-                featuredProducts.current.clientWidth / 4
+                featuredProducts.current.scrollWidth / 4
               );
             }}
           ></span>
           <span
             className={`dot ${
               featuredProductsScroll ===
-              (featuredProducts?.current?.clientWidth * 2) / 4
+              (featuredProducts?.current?.scrollWidth * 2) / 4
                 ? "active"
                 : "hide"
             }`}
             onClick={() => {
               featuredProducts.current.scrollLeft =
-                (featuredProducts.current.clientWidth * 2) / 4;
+                (featuredProducts.current.scrollWidth * 2) / 4;
               setfeaturedProductsScroll(
-                (featuredProducts.current.clientWidth * 2) / 4
+                (featuredProducts.current.scrollWidth * 2) / 4
               );
             }}
           ></span>
           <span
             className={`dot ${
               featuredProductsScroll ===
-              (featuredProducts?.current?.clientWidth * 3) / 4
+              (featuredProducts?.current?.scrollWidth * 3) / 4
                 ? "active"
                 : "hide"
             }`}
             onClick={() => {
               featuredProducts.current.scrollLeft =
-                (featuredProducts?.current?.clientWidth * 3) / 4;
+                (featuredProducts?.current?.scrollWidth * 3) / 4;
               setfeaturedProductsScroll(
-                (featuredProducts.current.clientWidth * 3) / 4
+                (featuredProducts.current.scrollWidth * 3) / 4
               );
             }}
           ></span>
@@ -219,38 +384,38 @@ export default function Home() {
           ></span>
           <span
             className={`dot ${
-              topSellingScroll === topSelling?.current?.clientWidth / 4
+              topSellingScroll === topSelling?.current?.scrollWidth / 4
                 ? "active"
                 : "hide"
             }`}
             onClick={() => {
               topSelling.current.scrollLeft =
-                topSelling.current.clientWidth / 4;
-              settopSellingScroll(topSelling.current.clientWidth / 4);
+                topSelling.current.scrollWidth / 4;
+              settopSellingScroll(topSelling.current.scrollWidth / 4);
             }}
           ></span>
           <span
             className={`dot ${
-              topSellingScroll === (topSelling?.current?.clientWidth * 2) / 4
+              topSellingScroll === (topSelling?.current?.scrollWidth * 2) / 4
                 ? "active"
                 : "hide"
             }`}
             onClick={() => {
               topSelling.current.scrollLeft =
-                (topSelling.current.clientWidth * 2) / 4;
-              settopSellingScroll((topSelling.current.clientWidth * 2) / 4);
+                (topSelling.current.scrollWidth * 2) / 4;
+              settopSellingScroll((topSelling.current.scrollWidth * 2) / 4);
             }}
           ></span>
           <span
             className={`dot ${
-              topSellingScroll === (topSelling?.current?.clientWidth * 3) / 4
+              topSellingScroll === (topSelling?.current?.scrollWidth * 3) / 4
                 ? "active"
                 : "hide"
             }`}
             onClick={() => {
               topSelling.current.scrollLeft =
-                (topSelling?.current?.clientWidth * 3) / 4;
-              settopSellingScroll((topSelling.current.clientWidth * 3) / 4);
+                (topSelling?.current?.scrollWidth * 3) / 4;
+              settopSellingScroll((topSelling.current.scrollWidth * 3) / 4);
             }}
           ></span>
           <span

@@ -1,29 +1,35 @@
 .footer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+}
+.footer .top {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
   background-color: var(--lightBlack);
-  padding: 1rem;
   color: var(--mediumGray);
+  padding: 1rem 0rem;
 }
-.footer .left-side {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.footer .left-side :last-child {
-  padding-top: 0.5rem;
-}
-.footer .left-side .policies > span {
+.footer .top span {
   cursor: pointer;
 }
-.footer .right-side {
+.footer .bottom {
+  background-color: var(--lightGray);
   display: flex;
-  justify-content: center;
+  padding: 0.2rem 0rem;
+  justify-content: space-between;
+}
+.footer .bottom .text {
+  text-align: center;
+  justify-self: center;
+  padding-left: 1rem;
+}
+.footer .bottom .right-side {
+  display: flex;
+  align-items: center;
 }
 .footer .right-side .social-icons {
-  padding-left: 1rem;
+  padding: 0rem 1rem;
   cursor: pointer;
 }
 .footer .right-side .social-icons.fb {

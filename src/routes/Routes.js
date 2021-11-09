@@ -8,6 +8,7 @@ import Home from "../screens/Home";
 import ProductDetails from "../screens/ProductDetails";
 import ShopProducts from "../screens/ShopProducts";
 import Billing from "../screens/Billing";
+import ShoppingCart from "../screens/ShoppingCart";
 
 const Routes = () => {
   return (
@@ -22,6 +23,7 @@ const Routes = () => {
               path="/product-details/:id"
               component={ProductDetails}
             />
+            <Route exact path="/shopping-cart" component={ShoppingCart} />
             <Route exact path="/billing" component={Billing} />
             <Route path="/" component={Home} />
           </Switch>

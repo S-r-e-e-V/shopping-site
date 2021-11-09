@@ -30,6 +30,7 @@ export default function ProductDetails() {
     backgroundImage: `url(${previewImage})`,
     backgroundPosition: "0% 0%",
   });
+  // quantity
   const substractQty = () => {
     if (quantity !== 1) {
       setquantity(quantity - 1);
@@ -42,7 +43,7 @@ export default function ProductDetails() {
   };
   // purchase
   const purchase = () => {
-    history.push("/billing");
+    history.push("/shopping-cart");
   };
   // quantity validation
   const Validate = (value) => {

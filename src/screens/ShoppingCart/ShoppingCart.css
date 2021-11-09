@@ -1,0 +1,189 @@
+.shopping-cart {
+  display: flex;
+  margin: 1rem;
+}
+
+/* left section ← */
+
+.shopping-cart .left-section {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  flex: 3;
+}
+.shopping-cart .left-section .titles {
+  display: flex;
+}
+.shopping-cart .left-section .titles :first-child {
+  flex: 3;
+}
+.shopping-cart .left-section .titles :not(:first-child) {
+  flex: 1;
+}
+/* cart-products */
+.shopping-cart .left-section .cart-products {
+  display: flex;
+  flex-direction: column;
+}
+.shopping-cart .left-section .cart-products .item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 1rem 0rem;
+  padding: 1rem;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.07);
+}
+.shopping-cart .left-section .cart-products .item .item-name {
+  display: flex;
+  align-items: center;
+  flex: 3;
+}
+
+.shopping-cart
+  .left-section
+  .cart-products
+  .item
+  :not(:first-child, :last-child) {
+  flex: 1;
+}
+.shopping-cart .left-section .cart-products .item .item-name img {
+  width: 3rem;
+  margin-right: 3rem;
+}
+/* qty */
+
+.shopping-cart .left-section .cart-products .item .qty-field {
+  display: flex;
+  position: relative;
+  max-width: 5rem;
+  justify-content: center;
+  border: 1px solid var(--mediumGray);
+}
+.shopping-cart .left-section .cart-products .item .qty-field .quantity {
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  /* padding: 0px 30px; */
+  color: var(--black);
+}
+.shopping-cart .left-section .cart-products .item .qty-field .minus {
+  cursor: pointer;
+  position: absolute;
+  left: 0.5rem;
+  top: 20%;
+  color: var(--gray);
+}
+.shopping-cart .left-section .cart-products .item .qty-field .plus {
+  cursor: pointer;
+  position: absolute;
+  left: 3.5rem;
+  top: 20%;
+  color: var(--gray);
+}
+.shopping-cart .left-section .cart-products .item .error {
+  color: var(--mediumred);
+  position: absolute;
+  top: 3rem;
+  left: 5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* remove item */
+
+.shopping-cart .left-section .cart-products .item .item-remove {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+/* right-section ➡ */
+.shopping-cart .right-section {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  flex: 1;
+}
+.shopping-cart .right-section .cart-total {
+  display: flex;
+  flex-direction: column;
+  border: 1px dashed var(--mediumGray);
+  background-color: var(--lightGray);
+  padding: 1rem;
+  border-radius: 6px;
+}
+.shopping-cart .right-section .title {
+  font-size: 1.2rem;
+  color: var(--black);
+  padding-bottom: 1rem;
+}
+/* product info */
+.shopping-cart .right-section .product-info {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--gray);
+  border-bottom: 1px solid var(--gray);
+  padding: 1rem 0rem;
+}
+.shopping-cart .right-section .product-info > div {
+  display: flex;
+  justify-content: space-between;
+}
+/* subtotal */
+.shopping-cart .right-section .subtotal {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  color: var(--black);
+  padding: 1rem 0rem;
+}
+/* shipping */
+.shopping-cart .right-section .shipping {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0rem;
+}
+/* total */
+.shopping-cart .right-section .total {
+  display: flex;
+  justify-content: space-between;
+  color: var(--mediumred);
+  font-size: 1.2rem;
+  padding: 1rem 0rem;
+}
+/* place order */
+.shopping-cart .right-section .place-order {
+  display: flex;
+  justify-content: center;
+  padding: 0.3rem;
+  border: 1px solid var(--mediumred);
+  transition: 1s all ease;
+  cursor: pointer;
+}
+
+.shopping-cart .right-section .place-order:hover {
+  background-color: var(--mediumred);
+  color: var(--white);
+}
+/* continue shopping */
+.shopping-cart .right-section .continue-shopping {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+  border: 1px solid var(--mediumGray);
+  transition: 1s all ease;
+  cursor: pointer;
+  margin-top: 1rem;
+  border-radius: 2px;
+  color: var(--black);
+}
+
+.shopping-cart .right-section .continue-shopping:hover {
+  background-color: var(--lightGray);
+  color: var(--mediumred);
+}
+.shopping-cart .right-section .continue-shopping .refresh {
+  padding-left: 1rem;
+}
