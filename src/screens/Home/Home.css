@@ -1,12 +1,12 @@
 .home {
   height: 100%;
 }
+/* banner */
 .home .banner-container {
   display: flex;
   justify-content: space-between;
   margin: 1rem;
 }
-
 .home .banner-container :first-child {
   padding-right: 0.3rem;
   flex: 3;
@@ -17,20 +17,30 @@
 /* video container */
 .home .video-container {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  /* justify-content: space-around;
+  flex-wrap: wrap; */
   margin: 1rem;
+  overflow-x: scroll;
 }
+.home .video-container::-webkit-scrollbar {
+  display: none;
+}
+.home .video-container .video-banner {
+  flex: 1;
+}
+
 /* services */
 .home .services {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   margin: 2rem 0rem;
   color: var(--black);
 }
 .home .services > div {
   display: flex;
   align-items: center;
+  margin: 1rem;
 }
 .home .services .services-text {
   display: flex;
@@ -107,4 +117,53 @@
   width: 1.5rem;
   height: 0.3rem;
   border-radius: 6px;
+}
+@media screen and (max-width: 800px) {
+  .home .video-container .video-banner video {
+    min-width: 160px;
+  }
+  .home .featured-product-list .card,
+  .home .top-selling-product-list .card {
+    width: 14rem;
+    height: 21rem;
+  }
+  .home .featured-product-list .card .details .review span,
+  .home .top-selling-product-list .card .details .review span {
+    display: none;
+  }
+  .home .featured-product-list .card img,
+  .home .top-selling-product-list .card img {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .home .services {
+    justify-content: flex-start;
+  }
+}
+@media screen and (max-width: 500px) {
+  /* featured and top selling products */
+  .home .featured-title,
+  .home .top-selling-title {
+    font-size: 1.4rem;
+  }
+  .home .featured-product-list .card,
+  .home .top-selling-product-list .card {
+    width: 9rem;
+    height: 14rem;
+  }
+  .home .featured-product-list .card img,
+  .home .top-selling-product-list .card img {
+    width: 9rem;
+    height: 7.5rem;
+  }
+  .home .featured-product-list .card .details,
+  .home .top-selling-product-list .card .details {
+    padding-top: 0.2rem;
+  }
+  .home .featured-product-list .card .details > span,
+  .home .top-selling-product-list .card .details > span {
+    padding: 0.05rem 0rem;
+  }
 }

@@ -1,6 +1,8 @@
 import React from "react";
 import "./Billing.css";
 
+import Loader from "../../components/Loader";
+
 export default function Billing() {
   return (
     <div className="billing">

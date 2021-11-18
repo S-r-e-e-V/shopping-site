@@ -158,3 +158,36 @@
   background-color: var(--mediumred);
   color: var(--white);
 }
+@media screen and (max-width: 1200px) {
+  .billing .left-section {
+    flex: 2;
+  }
+}
+@media screen and (max-width: 900px) {
+  .billing {
+    flex-direction: column;
+  }
+  .billing .right-section {
+    width: unset;
+  }
+}
+@media screen and (max-width: 500px) {
+  .billing .left-section .address .name {
+    flex-direction: column;
+  }
+  .billing .left-section .address .name :nth-child(2) {
+    margin-top: 0.5rem;
+  }
+  .billing .left-section .address .city-country {
+    flex-direction: column;
+  }
+  .billing .left-section .address .city-country :nth-child(2) {
+    margin-top: 0.5rem;
+  }
+  .billing .left-section .address .zip-phone {
+    flex-direction: column;
+  }
+  .billing .left-section .address .zip-phone :nth-child(2) {
+    margin-top: 0.5rem;
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./ShopProducts.css";
 
 import Slider from "@mui/material/Slider";
@@ -8,12 +8,14 @@ import Images from "../../assets";
 import { IoIosArrowDown } from "react-icons/io";
 import { BsFillGrid3X2GapFill, BsFillGridFill } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { FiSettings } from "react-icons/fi";
 
 import ProductCard from "../../components/ProductCard";
 import Footer from "../../components/Footer";
 import ProductDetailsCard from "../../components/ProductDetailsCard";
 
 export default function ShopProducts() {
+  const ref = useRef(null);
   const [expand, setexpand] = useState({
     category: false,
     size: false,
@@ -93,6 +95,8 @@ export default function ShopProducts() {
       no_of_reviews: 2,
     },
   ]);
+  // open/close filter state
+  const [openFilter, setopenFilter] = useState(false);
 
   const handleChange2 = (event, newValue, activeThumb) => {
     if (!Array.isArray(newValue)) {
@@ -111,10 +115,29 @@ export default function ShopProducts() {
       setsliderValue(newValue);
     }
   };
+  // mobile-view: open/close filter 📱
+  const viewFilter = () => {
+    setopenFilter(true);
+  };
+  // handle outside click
+  const handleClickOutside = (event) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      setopenFilter(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, true);
+    return () => {
+      document.removeEventListener("click", handleClickOutside, true);
+    };
+  }, []);
   return (
     <>
       <div className="shop-products">
-        <div className="filters">
+        <FiSettings className="filter-settings" onClick={() => viewFilter()} />
+        <div className={`filter-dim ${openFilter ? "activate" : ""}`}></div>
+        <div className={`filters ${openFilter ? "open" : ""}`} ref={ref}>
           <div className="filters-header">
             <span>Filters</span>
             <span>clear all</span>
@@ -284,7 +307,7 @@ export default function ShopProducts() {
         </div>
         <div className="list-of-products">
           <div className="list-of-products-header">
-            <span>{`showing ${12} of ${144}`}</span>
+            <span>{`Showing ${12} of ${144}`}</span>
             <div className="right-end">
               <div className="sort">
                 <span className="text">Sort by: </span>

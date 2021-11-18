@@ -1,0 +1,42 @@
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--lightGray);
+  margin: 0.3rem 0.5rem;
+}
+
+/* phone number section */
+.top-header .phone-number {
+  display: flex;
+  align-items: center;
+}
+.top-header .phone-number a {
+  text-decoration: none;
+  color: var(--gray);
+}
+.top-header .phone-number a span {
+  margin-left: 0.5rem;
+}
+/* social media section */
+.top-header .social-media {
+  display: flex;
+  align-items: center;
+}
+.top-header .social-media .social-icons {
+  padding: 0rem 1rem;
+  cursor: pointer;
+}
+
+/* social media icons 💬*/
+.top-header .social-media .social-icons.fb {
+  color: var(--violet);
+}
+.top-header .social-media .social-icons.insta {
+  color: var(--mediumred);
+}
+.top-header .social-media .social-icons.twitter {
+  color: var(--blue);
+}
+.top-header .social-icons.whatsapp {
+  color: var(--green);
+}

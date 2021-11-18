@@ -246,21 +246,21 @@ export default function Home() {
         <div
           style={{
             border: "1px solid #000",
-            height: "300px",
+            height: "350px",
             flex: 3,
             marginRight: ".3rem",
           }}
         ></div>
         <div
-          style={{ border: "1px solid #000", height: "300px", flex: 1 }}
+          style={{ border: "1px solid #000", height: "350px", flex: 1 }}
         ></div>
       </div>
       <div className="video-container">
-        <VideoBanner video={Images.video1} />
-        <VideoBanner video={Images.video2} />
         <VideoBanner video={Images.video5} />
-        <VideoBanner video={Images.video3} />
-        <VideoBanner video={Images.video4} />
+        <VideoBanner video={Images.video5} />
+        <VideoBanner video={Images.video5} />
+        <VideoBanner video={Images.video5} />
+        <VideoBanner video={Images.video5} />
       </div>
       <div className="services">
         <div className="delivery">

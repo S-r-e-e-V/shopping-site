@@ -18,12 +18,12 @@ export default function Footer() {
         <div className="text">
           Copyright © 2021 Mala Store.All Rights Reserved.
         </div>
-        <div className="right-side">
+        {/* <div className="right-side">
           <span>Social Media</span>
           <CgFacebook className="social-icons fb" />
           <SiTwitter className="social-icons twitter" />
           <CgInstagram className="social-icons insta" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -5,6 +5,7 @@
 .footer .top {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   align-items: center;
   background-color: var(--lightBlack);
   color: var(--mediumGray);
@@ -12,19 +13,21 @@
 }
 .footer .top span {
   cursor: pointer;
+  margin: 0rem 0.5rem;
 }
 .footer .bottom {
   background-color: var(--lightGray);
   display: flex;
   padding: 0.2rem 0rem;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: center;
 }
 .footer .bottom .text {
   text-align: center;
   justify-self: center;
-  padding-left: 1rem;
+  /* padding-left: 1rem; */
 }
-.footer .bottom .right-side {
+/* .footer .bottom .right-side {
   display: flex;
   align-items: center;
 }
@@ -40,4 +43,4 @@
 }
 .footer .right-side .social-icons.twitter {
   color: var(--blue);
-}
+} */

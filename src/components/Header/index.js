@@ -15,23 +15,28 @@ export default function Header() {
   };
   return (
     <div className="header">
-      <div className="logo-container">
-        {/* <FiMenu className="menu-bar" size="30" /> */}
-        <img src={Images.logo} />
+      <div className="first-layer">
+        <div className="logo-container">
+          {/* <FiMenu className="menu-bar" size="30" /> */}
+          <img src={Images.logo} />
+        </div>
+        <div className="search">
+          <div className="search-product">
+            <input placeholder="Search products ..." />
+            <AiOutlineSearch className="search-icon" />
+          </div>
+        </div>
       </div>
       <div className="header-titles">
+        <span className="title-text" onClick={() => redirect("/")}>
+          Browse Categories
+        </span>
         <span className="title-text" onClick={() => redirect("/")}>
           Home
         </span>
         <span className="title-text" onClick={() => redirect("/products")}>
           Shops
         </span>
-      </div>
-      <div className="search">
-        <div className="search-product">
-          <input placeholder="Search products ..." />
-          <AiOutlineSearch className="search-icon" />
-        </div>
       </div>
     </div>
   );

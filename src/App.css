@@ -2,6 +2,7 @@
   --white: #ffffff;
   --black: #000000;
   --lightBlack: #222222;
+  --lightDim: #0000007c;
   --lightGray: #f7f7f7;
   --mediumred: rgb(211, 73, 73);
   --blue: rgb(11, 190, 235);
@@ -16,17 +17,18 @@
   font-family: poppins;
   color: var(--gray);
 }
+/* selection */
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/* route section */
 .route {
   height: 100vh;
   width: 100vw;
 }
 .route .container {
-  height: calc(100vh - 4rem);
+  height: calc(100vh - 6rem);
   overflow-y: scroll;
-}
-/* selection */
-* {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 /* scrollbar */
 .route .container ::-webkit-scrollbar {
@@ -43,4 +45,24 @@
 }
 .route .container ::-webkit-scrollbar-thumb:hover {
   background: var(--gray);
+}
+
+/* header and sidenav */
+.route .sidenav,
+.route .mobile-header {
+  display: none;
+}
+@media screen and (max-width: 500px) {
+  .route .container {
+    height: calc(100vh - 3rem);
+    overflow-y: scroll;
+  }
+  .route .header,
+  .route .top-header {
+    display: none;
+  }
+  .route .sidenav,
+  .route .mobile-header {
+    display: flex;
+  }
 }
